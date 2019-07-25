@@ -14,9 +14,9 @@ class NLPCluster:
 		self.FONT_DIR = "C:/Windows/Fonts/맑은 고딕.ttf"
 
 	def search_k_means(self, X):
-		"""
+	"""
+	최적 k 값 찾기
         """
-        
         sse = []
 		for i in range(1, self.N_CLUSTERS+1):
 			km = KMeans(n_clusters=i, n_jobs=4, random_state=0)
@@ -27,9 +27,9 @@ class NLPCluster:
 
 
 	def kmeans(self, k, X):
-		"""
+	"""
+	kmeans++
         """
-        
         kms = KMeans(n_clusters=k, n_jobs=4, random_state=0)
 		kms.fit(X)
 		
@@ -37,6 +37,7 @@ class NLPCluster:
 
 	def hierachical(self, X, k):
         """
+	top hierachical
         """
         linked = linkage(X, 'single')
         labelList = range(1, k)
@@ -50,9 +51,9 @@ class NLPCluster:
         plt.show()
     
 	def tsne(self, X, vocab):
-		"""
+	"""
+	tsne을 이용한 2차원 축소
         """
-        
         ts = TSNE(n_components=self.N_COMPONENTS)
 		x_ts=ts.fit_transform(X)
 
