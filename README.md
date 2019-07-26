@@ -3,7 +3,7 @@ Advanced TCL
 
 ### Usages
 
-    >>> from hangul_utils import split_syllable_char, split_syllables,
+    >>> from BPE.KoreanHandler import split_syllable_char, split_syllables,
         join_jamos
     >>> print(split_syllable_char(u"안"))
     ('ㅇ', 'ㅏ', 'ㄴ')
